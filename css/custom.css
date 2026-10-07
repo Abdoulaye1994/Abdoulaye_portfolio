@@ -65,6 +65,55 @@
 /*** 	   02. General css		  ***/
 /************************************/
 
+/* ===== Sécurité : Force l'affichage des sections si WOW.js échoue ===== */
+.wow {
+    visibility: visible !important;
+    animation-name: none !important;
+}
+
+.wow.fadeInUp {
+    animation-name: fadeInUp !important;
+}
+
+/* Fallback si JS est désactivé */
+.no-js .wow {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+
+/* ===== CORRECTION BREADCRUMB — SUPPRESSION DU LIEN DU TEMPLATE ===== */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: '/' !important;
+    float: none !important;
+    color: var(--white-color) !important;
+    padding-right: 8px !important;
+    opacity: 0.7 !important;
+    font-size: 14px !important;
+}
+
+/* ===== Correction de l'animation de titre ===== */
+.text-anime-style-2 {
+    word-spacing: 0.15em;
+    letter-spacing: 0.01em;
+}
+
+.text-anime-style-2 span {
+    display: inline-block;
+}
+
+/* Force un espace naturel entre les mots */
+h1.text-anime-style-2,
+h2.text-anime-style-2 {
+    line-height: 1.2em;
+}
+
+/* Supprime aussi tout contenu injecté par Bootstrap */
+.breadcrumb-item + .breadcrumb-item::before {
+    --bs-breadcrumb-divider: '/';
+}
+
 /* ===== Correction du breadcrumb — Suppression du lien du template ===== */
 :root,
 [data-bs-theme="light"],

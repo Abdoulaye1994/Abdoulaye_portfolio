@@ -5,9 +5,11 @@
 	var $body = $('body'); 
 
 	/* Preloader Effect */
-	$window.on('load', function(){
-		$(".preloader").fadeOut(600);
-	});
+	$(document).ready(function(){
+    setTimeout(function() {
+        $(".preloader").fadeOut(400);
+    }, 800);
+});
 
 	/* Sticky Header */	
 	if($('.active-sticky-header').length){
